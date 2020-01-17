@@ -1,16 +1,25 @@
 {{> header}}
-<h1>Manage cookies</h1>
 
-<p>Manage your cookies here</p>
+<div class="container-md">
+  <div class="row">
+     <div class="col">
 
-<form action="/consent" method="get">
-    <input type="checkbox" name="necessary" id="necessary" value=true checked readonly>
-    <label for="necessary">Necessary Cookies</label>
-    <input type="checkbox" name="optOut" id="optOut" value=true checked>
-    <label for="optOut">Opt-out cookies</label>
-    <input type="checkbox" name="optIn" id="optIn" value=true>
-    <label for="optIn">Opt-in cookies</label>
-    <input type="submit" value="Submit">
-</form>
+        <h1>Manage cookies</h1>
+
+        <p>Manage your cookies here</p>
+
+        <form action="/consent" method="get">
+            <input type="checkbox" name="necessary" id="necessary" value=true checked readonly>
+            <label for="necessary">Necessary Cookies</label>
+            <input type="checkbox" name="optOut" id="optOut" value=true checked>
+            <label for="optOut">Opt-out cookies</label>
+            <input type="checkbox" name="optIn" id="optIn" value=true>
+            <label for="optIn">Opt-in cookies</label>
+            <input type="submit" value="Submit">
+        </form>
+
+        </div>
+    </div>
+</div>
 
 {{> footer}}

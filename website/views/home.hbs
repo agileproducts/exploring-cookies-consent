@@ -1,11 +1,18 @@
 {{> header}}
-{{#unless consent}}
-  {{> consent}}
-{{/unless}}
-<h1>Hello World</h1>
 
-<p>I am a website.</p>
+<div class="container-md">
+  <div class="row">
+     <div class="col">
+    {{#unless consent}}
+      {{> consent}}
+    {{/unless}}
+    <h1>Hello World</h1>
 
-<p>Cookies: {{cookies}}</p>
+    <p>I am a website.</p>
+
+    <p>Cookies: {{cookies}}</p>
+    </div>
+  </div>
+</div>
 
 {{> footer}}
