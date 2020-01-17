@@ -1,0 +1,23 @@
+{
+  "name": "node-express-example",
+  "version": "1.0.0",
+  "description": "A template for a simple node webapp",
+  "main": "app.coffee",
+  "scripts": {
+    "start": "coffee app.coffee",
+    "test": "./node_modules/mocha/bin/mocha test/*/*.spec.* --require ./node_modules/coffeescript/register --exit"
+  },
+  "author": "SMC",
+  "license": "ISC",
+  "dependencies": {
+    "coffeescript": "^2.2.2",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.5.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.1",
+    "supertest": "^3.0.0"
+  }
+}
