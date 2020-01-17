@@ -1,7 +1,10 @@
 <div class="bg-warning p-2 mb-2">
     <b>COOKIE CONSENT BANNER</b>
-    <a href="/consent/manage">Manage settings</a>
-    <form action="/consent" method="get">
-        <input type="submit" value="Accept all cookies">
+    <p>This site uses cookies to demonstrate the use of cookies.</p>
+    <form action="/consent" method="get" class="form-inline">
+        <input type="submit" value="Accept all cookies" class="btn btn-success">
+        <span class="ml-3 btn btn-primary"> 
+            <a href="/consent/manage" class="text-white">Choose which cookies to accept</a>
+        </span>
     </form>
 </div>
