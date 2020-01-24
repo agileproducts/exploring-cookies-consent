@@ -1,6 +1,6 @@
 # Website
 
-A dummy website incorporating an entirely server-side cookie consent notice.
+A dummy website incorporating an entirely server-side cookie consent notice. 
 
 ## Dependencies
 
