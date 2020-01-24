@@ -1,12 +1,15 @@
 #core modules
 path = require 'path'
+fs = require 'fs'
 
 #npm install
 express = require 'express'
 cookieParser = require 'cookie-parser'
 expressHandlebars = require 'express-handlebars'
 handlebars = require 'handlebars'
+yaml = require 'js-yaml'
 
+cookieBanner = require('./lib/cookie-banner.coffee')
 cookieSetter = require('./lib/cookie-setter.coffee')
 consents = require('./lib/consents.coffee')
 secret = "donkeyfuck"
@@ -23,6 +26,9 @@ handlebarsEngineConfig = {
 # create an instance of the template engine with this config
 handlebarsInstance = expressHandlebars.create(handlebarsEngineConfig)
 
+# cookie consent configuration
+cookieConfig = yaml.safeLoad(fs.readFileSync("cookies.yml"))
+
 # create express app
 app = express()
 
@@ -34,6 +40,7 @@ app.set('views', './views')
 #middleware
 app.use express.static(path.join(__dirname, 'public'))
 app.use cookieParser(secret)
+app.use cookieBanner(cookieConfig)
 app.use cookieSetter
 
 
@@ -41,7 +48,8 @@ app.use cookieSetter
 app.get '/', (req, res) ->
   res.status 200
   consent = if req.cookies.cst then true else false
-  res.render 'home', { "cookies": "bob", "consent": consent }
+  cookieConfig = req.cookieConfig
+  res.render 'home', { "cookieConfig": cookieConfig, "consent": consent }
 
 app.get '/consent', (req, res) ->
   console.log req.query
