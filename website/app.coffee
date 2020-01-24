@@ -49,7 +49,7 @@ app.get '/', (req, res) ->
   res.status 200
   consent = if req.cookies.cst then true else false
   cookieConfig = req.cookieConfig
-  res.render 'home', { "cookieConfig": cookieConfig, "cookies": req.cookies }
+  res.render 'home', { "cookieConfig": cookieConfig, "cookies": req.cookies, "consent": consent }
 
 app.get '/consent', (req, res) ->
   consents.qsParser req.query, (consentCode) ->
