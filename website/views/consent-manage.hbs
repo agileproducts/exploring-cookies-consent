@@ -2,24 +2,38 @@
 
 <div class="container-md">
   <div class="row">
-     <div class="col">
+     <fieldset class="col">
 
         <h1>Manage cookies</h1>
 
         <p>Manage your cookies here</p>
-
         <form action="/consent" method="get">
-            <input type="checkbox" name="necessary" id="necessary" value=true checked readonly>
+            <input type="checkbox" name="necessary" id="necessary" value="true" checked readonly>
             <label for="necessary">Necessary Cookies</label>
-            <input type="checkbox" name="optOut" id="optOut" value=true checked>
+            <input type="checkbox" name="optOut" id="optOut" value="true" checked>
             <label for="optOut">Opt-out cookies</label>
-            <input type="checkbox" name="optIn" id="optIn" value=true>
+            <input type="checkbox" name="optIn" id="optIn" value="true">
             <label for="optIn">Opt-in cookies</label>
             <input type="submit" value="Submit">
         </form>
 
-        </div>
-    </div>
-</div>
+        <!-- <h2>This is the config based one that doesn't yet</h2>
+        <form action="#" method="get">
+            {{#each cookieConfig.groups}}
+            <fieldset>
+              <legend>{{this.heading}}</legend>
+              <div class="form-check">
+                <input type="checkbox" 
+                  name="{{this.label}}" 
+                  id="{{this.label}}" 
+                  value=true {{#if this.default}}checked{{/if}} {{#unless this.toggleable}}disabled{{/unless}}>
+                <label for="{{this.label}}">{{this.description}}</label>
+              </div>
+            </fieldset>
+            {{/each}}
+            <input type="submit" value="Submit">
+        </form> -->
+
+
 
 {{> footer}}

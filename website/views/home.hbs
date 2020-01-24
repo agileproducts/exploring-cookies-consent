@@ -10,7 +10,12 @@
 
     <p>I am a website.</p>
 
-    <p>Cookies: {{cookies}}</p>
+    <h3>Cookies set:</h3>
+    <ul>
+      {{#each cookies}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
     </div>
   </div>
 </div>

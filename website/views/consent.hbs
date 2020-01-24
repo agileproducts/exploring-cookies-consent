@@ -2,6 +2,9 @@
     <b>{{cookieConfig.banner.heading}}</b>
     <p>{{cookieConfig.banner.text}}</p>
     <form action="/consent" method="get" class="form-inline">
+        <input type="hidden" name="necessary" id="necessary" value=true>
+        <input type="hidden" name="optOut" id="optOut" value=true>
+        <input type="hidden" name="optIn" id="optIn" value=true>
         <input type="submit" value="Accept all cookies" class="btn btn-success">
         <span class="ml-3 btn btn-primary"> 
             <a href="/consent/manage" class="text-white">Choose which cookies to accept</a>

@@ -49,16 +49,16 @@ app.get '/', (req, res) ->
   res.status 200
   consent = if req.cookies.cst then true else false
   cookieConfig = req.cookieConfig
-  res.render 'home', { "cookieConfig": cookieConfig, "consent": consent }
+  res.render 'home', { "cookieConfig": cookieConfig, "cookies": req.cookies }
 
 app.get '/consent', (req, res) ->
-  console.log req.query
   consents.qsParser req.query, (consentCode) ->
     res.cookie('cst', consentCode)
     res.redirect('/')
 
 app.get '/consent/manage', (req, res) ->
-  res.render 'consent-manage'
+  cookieConfig = req.cookieConfig
+  res.render 'consent-manage', { "cookieConfig": cookieConfig }
   #needs to read and reflect what is actually set
 
 port = process.env.PORT || 3000
