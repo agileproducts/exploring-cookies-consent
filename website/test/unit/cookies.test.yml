@@ -1,0 +1,22 @@
+banner:
+  heading: TEST BANNER HEADING
+  text: Test banner text.
+groups:
+  necessary:
+    label: necessary
+    heading: Strictly necessary cookies
+    description: The website will not work without these cookies
+    default: true
+    toggleable: false
+  functional:
+    label: functional
+    heading: Functional cookies
+    description: These cookies allow the website to remember choices that you make and offer a better experience
+    default: true
+    toggleable: true
+  advertising:
+    label: advertising
+    heading: Advertising cookies
+    description: These cookies allow the website to show pretend personalised ads
+    default: false
+    toggleable: true
