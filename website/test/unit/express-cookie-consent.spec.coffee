@@ -16,3 +16,5 @@ describe '#cookieConfig', () ->
     done()
 
   it 'should have a group of necessary cookies'
+
+## https://dev.to/ryhenness/external-routes-with-nodejs-1ni https://github.com/visionmedia/supertest
